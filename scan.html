@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scan Your Self</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <!-- *************************************** links ****************************** -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script src="jquery.counterup.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha256-jDnOKIOq2KNsQZTcBTEnsp76FnfMEttF6AV2DF2fFNE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js" integrity="sha256-JtQPj/3xub8oapVMaIijPNoM0DHoAtgh/gwFYuN5rik=" crossorigin="anonymous"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <!-- font links -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha256-NuCn4IvuZXdBaFKJOAcsU2Q3ZpwbdFisd5dux4jkQ5w=" crossorigin="anonymous" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
+
+<!-- *********************************links ends ************************** -->
+</head>
+<body onload="startTime()">
+
+   <!-- ----------------------------------------nav starts ---------------------------------------- -->
+  
+<nav class="navbar navbar-expand-lg navbar-light nav_style p-10">
+  <div class="container">
+    <div class="" style="width: 70px">
+      <img src="photo/indiaflag.png" style="width: 68px; height: 55px" >  
+      <div class="" style="color: white" id="txt"></div>  
+    </div>
+        
+    <a class="navbar-brand pl-3" href="index.html">COVID-19 INDIA </a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent"> 
+        <span class="navbar-toggler-icon"></span> 
+      </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto text-center">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="statewise_Case.html">State-Cases</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="symptoms.html">Symptoms<span class="sr-only">(current)</span></a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="prevention.html">Prevention<span class="sr-only">(current)</span></a>
+          </li>
+           <li class="nav-item active">
+            <a class="nav-link" href="scan.html">Scan Risk <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Helpline No<span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+    </div>
+  </div>  
+</nav><br>
+      <!-- ----------------------------------------nav ends ---------------------------------------- -->
+
+
+
+<div class="container-fluid" style="background-color: #d5f4e6" >
+<h3 class="text-center"> Scan Your COVID </h3>
+
+            <div class="form-group">
+              <label>Enter Your Name : </label>
+              <input type="name" name="username" class="form-control" placeholder="Enter Your Name" id="name" >
+              <span id="printname" class="text-danger font-weight-bold"></span>
+            </div>
+
+            <div class="form-group">
+              <label>Select Your Age : </label>
+              <input type="number" name="age" class="form-control" placeholder="Enter Your Age" id="age" >
+              <span id="printage" class="text-danger font-weight-bold"></span>
+            </div>
+
+            <label>Select Your Gender : </label>
+              <select class="form-control" name="gender" id="gender"> 
+                <option value="0" disabled selected> Select Your Gender </option> 
+                <option value=" "> Male </option> 
+                <option value=" ">Female</option> 
+                <option value=" ">Other</option> 
+                <span id="printname" class="text-danger font-weight-bold"></span>
+              </select>
+            <label> Are you experiencing any of the symptoms below ? </label>
+            <select class="form-control" id="my">
+              <option value="0" disabled selected> Select Symptom </option>
+              <option value="12"> Dry Cough and Sore Throat </option> 
+              <option value="4"> weakness </option>
+              <option value="1"> None of these </option>
+              <span id="printname" class="text-danger font-weight-bold"></span>
+            </select>
+            <label>Select Your Body Temperature : </label>
+              <select class="form-control" id="mya" > 
+                <option value="0" disabled selected> Select Temperature </option>
+                <option value="1"> Normal (96 F - 98.6 F) </option> 
+                <option value="12">Fever (98.6 F - 102 F)</option>
+                <option value="20">High Fever ( > 102 F)</option>
+                <option value="1">Don't Know</option> 
+                <span id="printname" class="text-danger font-weight-bold"></span>
+            </select>
+
+            <label>Additionally, please verify if you are experiencing any of the symptoms below : </label>
+              <select class="form-control" id="myb" > 
+                <option value="0" disabled selected> verify symptoms </option>
+                <option value="8"> Feeling Breathless & Difficulty in Breathing  </option> 
+                <option value="4">Chest Pain or Pressure in Chest</option>
+                <option value="0"> None of these </option> 
+                <span id="printname" class="text-danger font-weight-bold"></span>
+            </select>
+
+            <label> Select Your Travel History : </label>
+              <select name="travel_history" class="form-control" id="myc" > 
+                <option value="0" disabled selected> Select Travel </option>
+                <option value="1"> No Travel History </option> 
+                <option value="1"> No Contact with anyone with symptoms</option>
+                <option value="26"> Travel or metting in affected geogriphical area in last 14 days </option>
+                <option value="30"> closed contact with confirmed COVID in last 14 days </option>
+                <span id="printname" class="text-danger font-weight-bold"></span>
+            </select>
+
+            <label> Do You have any of these conditions ? </label>
+              <select class="form-control" id="myd" > 
+                <option value="0" disabled selected> Mark if any or none </option>
+                <option value="8"> Diabetes & High Blood Pressure  </option> 
+                <option value="5"> Heart Disease or Kidney Disease </option>
+                <option value="5"> Lung Disease (Asthma, TB etc.) </option>
+                <option value="8"> Reduced immunity </option>
+                <option value="0"> None of these </option> 
+                <span id="printname" class="text-danger font-weight-bold"></span>
+            </select>
+
+            <label> How your symptoms progressed over the last 48 hours ? </label>
+              <select class="form-control" id="mye" > 
+                <option value="0" disabled selected> Mark if any or none </option>
+                <option value="1"> Improved  </option> 
+                <option value="5"> No Change </option>
+                <option value="15"> Worsened </option>
+                <option value="0"> None of these </option> 
+            </select>
+
+              <button type="submit" name="submit" class="btn btn-success btn-lg btn-block" style="margin-top: 30px;" onclick="myFunction()">Click Here To Get Result</button>
+
+            <p id="demo" name="result" class="text-danger font-weight-bold text-center"></p>
+</div><br>
+
+<div class="container-fluid d-flex justify-content-center align-item-center" >
+  <div class=" " style= " color: #000000;">
+
+   <h4 class=" text-info font-weight-bold" style="margin-top: 90 px;"> CORONA OR NOT !! Knowing The Differences </h4>
+   
+   <ol class ="" style="margin-left: 20px; margin-top: 20px;">
+     <li> dry cough + sneeze = Air polution </li>
+     <li> cough + mucus + sneeze + runny nose = Common cold  </li>
+     <li> cough + mucus + sneeze + runny nose + body ache + weakness = Flu </li>
+     <li> cough + mucus + sneeze + runny nose + body ache + weakness + high fever + difficulty breathing = Corona Virus </li>
+   </ol>
+   <p><b>Note:</b> provided by pathology department AIIMS, Delhi.</p>
+   </div>
+
+</div><br>
+<!-- ----------------------------------------footer page  starts---------------------------------------- -->
+
+<footer style=" background-color: #2c2c54 ">
+<div class="container-fluid text-white">     
+  <div class="row">
+    <div class="col-md-4 col-lg-4 mx-auto my-md-4 my-0 mt-4 mb-1">
+      <h3> Contact Address: </h3>
+            <p>Kolkata, West Bengal</p>
+        <p>Email: suraj.gupta.0214@gmail.com</p>
+        <p>Phone No: 6290569471 </p>
+    </div>
+
+    <hr class="clearfix w-100 d-md-none">
+
+    <div class="col-md-4 col-lg-4 mx-auto my-md-4 my-0 mt-4 mb-1">
+     
+    <h3 style="margin-left: 15px;">Quick Links</h3>
+      <ul >
+        <li><a href="statewise_Case.html"> Statewise Cases</a> </li>
+      </ul>
+    
+      <ul >
+        <li><a href="symptoms.html"> Symptoms</a> </li>
+      </ul>
+      <ul>
+        <li><a href="prevention.html"> Prevention</a> </li>
+      </ul>
+      <ul >
+        <li><a href="scan.html"> Scan Risk</a> </li>
+      </ul>
+      <ul >
+        <li> <a href="contact.html">Helpline No</a></li>
+      </ul>
+    </div>
+
+    <hr class="clearfix w-100 d-md-none">
+
+    <div class="col-md-4 col-lg-4 mx-auto my-md-4 my-0 mt-4 mb-1" >
+       <h3> Follow Me On </h3>
+       <div class="row">
+          <div class="col-md-2 col-lg-2 mx-auto my-md-2 my-0 mt-2 mb-6">
+            <div>
+              <a href="https://www.linkedin.com/in/suraj-gupta-583b05174/" target="blank"><i class="fa fa-2x fa-linkedin" aria-hidden ="true" style="color: #0097e6; "> </i>
+              <p class="social">Linkedin</p></a>
+            </div>
+            <div>
+              <a href="https://github.com/SURAJGUPTA0214" target="blank1"><i class=" fa fa-2x fa-github" aria-hidden ="true"  style=""> </i>
+              <p class="social">Github</p></a>
+            </div>
+          </div>
+
+          <div class="col-md-2 col-lg-2 mx-auto my-md-2 my-0 mt-2 mb-6">
+            <div>
+              <a href="https://www.facebook.com/profile.php?id=100006490002293" target="blank2"><i class=" fa fa-2x fa-facebook" target="blank" aria-hidden ="true"style="color: #3B5998; "> </i>
+              <p class="social">Facebook</p></a>
+            </div>
+            <div>
+              <a href="https://www.instagram.com/suraj.gupta.0214" target="blank3"><i class=" fa fa-2x fa-instagram" aria-hidden ="true"style="color: #bb0000;"> </i>
+              <p class="social">Instagram</p></a>
+            </div>
+          </div>
+        </div>    
+    </div>
+  </div>
+</div>
+</footer>
+<!-- ----------------------------------------footer page ends---------------------------------------- -->
+
+
+<script>
+function myFunction() {
+  var a = document.getElementById("my").value;
+  
+  var b = document.getElementById("mya").value;
+
+  var c = document.getElementById("myc").value;
+
+  var d = document.getElementById("myd").value;
+
+  var e = document.getElementById("mye").value;
+    
+  var s = parseInt(a)+parseInt(b) + parseInt(c) + parseInt(d) + parseInt(e);
+  document.getElementById("demo").innerHTML = s + " % Chances You Have ..." + "<br>" +" Note : ** This one is not an official created for project purpose only **";
+}
+</script>
+<script>
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =
+  h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
+
+
+</body>
+</html>
+
+
+
+<!-- <?php
+
+if(isset($_POST['submit'])){
+
+$username = $_POST['username'];
+
+$age = $_POST['age'];
+
+$gender = $_POST['gender'];
+
+$result = $_POST['result'];
+
+$insertquery =" insert into user(username, age, gender, result) values('$username', '$age', '$gender', '$result')";
+
+$query = mysqli_query($con,$insertquery);
+
+ if($query){
+  ?>
+  <script type="text/javascript">
+    alert("connection success");
+  </script>
+ } else {
+ <script type="text/javascript">
+  alert("No connection");
+ </script>
+ <?php
+}
+
+
+}
+
+?> -->
